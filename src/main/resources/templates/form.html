@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <link rel="stylesheet" th:href="@{/style.css}" />
+
+
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <form action="#" th:action="@{/pr}" th:object="${user}" method="post">
+
+            <div class="mb-3">
+                <label for="exampleInputusername" class="form-label">user</label>
+                <input type="text" class="form-control" id="exampleInputusername" name="name" th:field="*{name}"
+                    th:classappend="${#fields.hasErrors('name')?'is-invalid':''}">
+
+                <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" id="validationServerUsernameFeedback"
+                    class="invalid-feedback">
+                    <!-- Please choose a username. -->
+                </div>
+
+                <!-- <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p> -->
+
+
+
+
+            </div>
+
+
+
+            <div class="mb-3">
+                <label for="exampleInputage" class="form-label">your age</label>
+                <input type="number" class="form-control" name="age" th:field="*{age}" id="exampleInputage"
+                    th:classappend="${#fields.hasErrors('age')?'is-invalid':''}">
+
+                <div th:if="${#fields.hasErrors('age')}" th:errors="*{age}" id="validationServerUsernameFeedback"
+                    class="invalid-feedback">
+                    <!-- Please choose a username. -->
+                </div>
+
+
+
+                <!-- <p th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></p> -->
+            </div>
+
+
+            <div class="mb-3">
+                <label for="exampleInputemail" class="form-label">your email</label>
+                <input type="email" class="form-control" name="email" th:field="*{email}" id="exampleInputemail"
+                    th:classappend="${#fields.hasErrors('age')?'is-invalid':''}">
+
+
+                <div id="emailhelp" class="form-text">We'll never share your email with anyone else.</div>
+
+                <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" id="validationServerUsernameFeedback"
+                    class="invalid-feedback">
+                    <!-- Please choose a username. -->
+                </div>
+
+
+
+                <!-- <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p> -->
+            </div>
+
+
+
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="agreed"
+                    th:classappend="${#fields.hasErrors('agreed')?'is-invalid':''}">
+
+                <label class="form-check-label" for="exampleCheck1">Agree Terms & Conditions</label>
+
+                <div th:if="${#fields.hasErrors('agreed')}" id="validationServerUsernameFeedback"
+                    class="invalid-feedback">
+                    Tick the agree checkbox
+                </div>
+
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+
+
+
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>

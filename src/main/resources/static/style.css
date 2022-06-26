@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    /* color: white; */
+    /* background-color: red; */
+    
+}
+
+
+.container {
+    background-color: rgb(223, 217, 41);
+    max-width: max-content;
+    border-radius: 10px;
+
+}
+
+.form-text {
+    color: white;
+}

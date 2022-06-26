@@ -1,0 +1,13 @@
+package com.example.formvalidate;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class FormvalidateApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(FormvalidateApplication.class, args);
+	}
+
+}
